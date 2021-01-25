@@ -21,6 +21,7 @@
                         <h3 style="text-align: center;color: #dffe48;background-color: black;margin-top: 15px;">團隊建造-屏東好好玩</h3>
                         <button onclick="myFunction()" class="btn tm-btn-secondary" style="font-size:larger;margin-top:50px;">抽題目</button>      
                         <h2 class="tm-color-secondary mb-4" style="text-align: center;margin-top:20px;font-size: 64pt;" id="name" ></h2>
+                        <label id="question" style="text-align: center;color: black;font-size: 18pt;margin-bottom: 20px;"></label>
                         <button onclick="resetFunction()"  class="btn tm-btn-reset" style="font-size:small;margin-top:50px;margin:0px auto;">重抽</button>  
                     </p>
                     </div>
@@ -50,14 +51,25 @@
             speed: 800
         });
 
+        var isClick =false;
         function resetFunction (){
             document.getElementById("name").innerHTML = "";
+            document.getElementById("question").innerHTML = "";
+            isClick=false;
         }
         function myFunction() {
         
+        if (isClick==false){
         var cWord=["none","題目1","題目2","題目3"];
+        var cQuestion=["none","寫出十首與火車有相關的歌曲。","請說出乘坐區間車從屏東車站到枋寮車站，依序會停靠的車站有哪些?","台灣舊車站對對碰，請配對指定圖片上的車站與名稱。"];
         var iRandom =getRandom(1,4);
         document.getElementById("name").innerHTML = cWord[iRandom];
+        document.getElementById("question").innerHTML = cQuestion[iRandom];
+        isClick=true;
+        } else{
+            alert("請按重抽按鈕");
+            
+        } 
         }
 
         //產生亂數

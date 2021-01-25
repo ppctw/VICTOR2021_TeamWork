@@ -20,7 +20,8 @@
                         <img src="img/VICTOR_001.png" alt="Image" class="rounded-circle tm-circle-img" >
                         <h3 style="text-align: center;color: #dffe48;background-color: black;margin-top: 15px;">團隊建造-屏東好好玩</h3>
                         <button onclick="myFunction()" class="btn tm-btn-secondary" style="font-size:larger;margin-top:50px;">抽餐具</button>      
-                        <h2 class="tm-color-secondary mb-4" style="text-align: center;margin-top:20px;font-size: 64pt;" id="name" ></h2>
+                        <h2 class="tm-color-secondary mb-4" style="text-align: center;margin-top:20px;font-size: 60pt;" id="name" ></h2>
+                        <label id="question" style="text-align: center;color: black;font-size: 48pt;"></label>
                         <button onclick="resetFunction()"  class="btn tm-btn-reset" style="font-size:small;margin-top:50px;margin:0px auto;">重抽</button>  
                     <label id="cObject" style="text-align: center;" ></label>
                     </p>
@@ -52,29 +53,32 @@
         });
 
         var cWord=["餐具1","餐具2","餐具3","餐具4"];
-         
+        var cQuestion =["蛋糕刀","吸管","湯匙","紙碗"];
         function myFunction() {
             var __cObject="";
      
           
         var __iRandomNumber =cWord.length; //目前object內數字
         var __nowNumber="";
+        var __nowQuestion=document.getElementById("question");
+         
           console.log("__iRandomNumber",__iRandomNumber)
             if(__iRandomNumber >0){
                 
                 var iRandom =getRandom(0,__iRandomNumber);
                 //console.log('iRandom',iRandom);
                 document.getElementById("name").innerHTML = cWord[iRandom];
+                document.getElementById("question").innerHTML = cQuestion[iRandom];
                  cWord.splice(iRandom,1);
+                 cQuestion.splice(iRandom,1);
 
-                 
-                 
                 console.log("cWord",cWord);
             }else  {
                 //  cWord=["餐具1","餐具2","餐具3","餐具4"];
                 // var iRandom =getRandom(0,cWord.length);
                 // //console.log('iRandom',iRandom);
                 // document.getElementById("name").innerHTML = cWord[iRandom];
+                // document.getElementById("name").innerHTML = cQuestion[iRandom];
  
                 //  cWord.splice(iRandom,1);
                 alert ("請按重抽按鈕");
@@ -88,7 +92,10 @@
                 //console.log("cWord[i]",cWord[j]);
                
             }
+             
+        
                  document.getElementById("cObject").innerHTML =__cObject;
+                 
         }
 
         //產生亂數
@@ -102,7 +109,9 @@
         function resetFunction (){
             document.getElementById("name").innerHTML = "";
             cWord=["餐具1","餐具2","餐具3","餐具4"];
+            cQuestion =["蛋糕刀","吸管","湯匙","紙碗"];
             document.getElementById("cObject").innerHTML =" ";
+            document.getElementById("question").innerHTML =" ";
         }
     </script>
 </body>
