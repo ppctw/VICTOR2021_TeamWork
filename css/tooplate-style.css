@@ -85,6 +85,12 @@ body {
   background-color: #f707ed;
 }
 
+.tm-btn-reset {
+  color: white;
+  width: 50%;
+  background-color: #00b3fe;
+}
+
 .tm-btn-secondary:hover,
 .tm-btn-secondary:focus {
   background-color: #00b3fe;

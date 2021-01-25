@@ -58,7 +58,7 @@
           
         var __iRandomNumber =cWord.length; //目前object內數字
         var __nowNumber="";
-          
+          console.log("__iRandomNumber",__iRandomNumber)
             if(__iRandomNumber >0){
                 
                 var iRandom =getRandom(0,__iRandomNumber);
@@ -71,7 +71,7 @@
                 console.log("cWord",cWord);
             }else  {
                  cWord=["餐具1","餐具2","餐具3","餐具4"];
-                var iRandom =getRandom(0,__iRandomNumber);
+                var iRandom =getRandom(0,cWord.length);
                 //console.log('iRandom',iRandom);
                 document.getElementById("name").innerHTML = cWord[iRandom];
  

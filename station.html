@@ -21,6 +21,7 @@
                         <h3 style="text-align: center;color: #dffe48;background-color: black;margin-top: 15px;">團隊建造-屏東好好玩</h3>
                         <button onclick="myFunction()" class="btn tm-btn-secondary" style="font-size:larger;margin-top:50px;">抽題目</button>      
                         <h2 class="tm-color-secondary mb-4" style="text-align: center;margin-top:20px;font-size: 64pt;" id="name" ></h2>
+                        <button onclick="resetFunction()"  class="btn tm-btn-reset" style="font-size:small;margin-top:50px;margin:0px auto;">重抽</button>  
                     </p>
                     </div>
                     <!-- <div class="col-xl-7 col-lg-6 tm-circle-img-container">
@@ -48,6 +49,10 @@
             easing: 'easeInOutQuart',
             speed: 800
         });
+
+        function resetFunction (){
+            document.getElementById("name").innerHTML = "";
+        }
         function myFunction() {
         
         var cWord=["none","題目1","題目2","題目3"];
