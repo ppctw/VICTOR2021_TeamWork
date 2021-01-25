@@ -92,9 +92,9 @@ body {
 }
 
 .tm-btn-secondary:hover,
-.tm-btn-secondary:focus {
+/* .tm-btn-secondary:focus {
   background-color: #00b3fe;
-}
+} */
 
 .tm-bg-circle-white {
   background-color: white;
