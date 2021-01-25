@@ -21,6 +21,7 @@
                         <h3 style="text-align: center;color: #dffe48;background-color: black;margin-top: 15px;">團隊建造-屏東好好玩</h3>
                         <button onclick="myFunction()" class="btn tm-btn-secondary" style="font-size:larger;margin-top:50px;">抽題目</button>      
                         <h2 class="tm-color-secondary mb-4" style="text-align: center;margin-top:20px;font-size: 64pt;" id="name" ></h2>
+                        <button onclick="resetFunction()"  class="btn tm-btn-reset" style="font-size:small;margin-top:50px;margin:0px auto;">重抽</button>  
                     <label id="cObject" style="text-align: center;" ></label>
                     </p>
                     </div>
@@ -70,12 +71,13 @@
                  
                 console.log("cWord",cWord);
             }else  {
-                 cWord=["餐具1","餐具2","餐具3","餐具4"];
-                var iRandom =getRandom(0,cWord.length);
-                //console.log('iRandom',iRandom);
-                document.getElementById("name").innerHTML = cWord[iRandom];
+                //  cWord=["餐具1","餐具2","餐具3","餐具4"];
+                // var iRandom =getRandom(0,cWord.length);
+                // //console.log('iRandom',iRandom);
+                // document.getElementById("name").innerHTML = cWord[iRandom];
  
-                 cWord.splice(iRandom,1);
+                //  cWord.splice(iRandom,1);
+                alert ("請按重抽按鈕");
 
             }
              
@@ -96,6 +98,12 @@
         
         // 產生 5~10 之間的亂數
         //console.log(getRandom(0,4));
+
+        function resetFunction (){
+            document.getElementById("name").innerHTML = "";
+            cWord=["餐具1","餐具2","餐具3","餐具4"];
+            document.getElementById("cObject").innerHTML =" ";
+        }
     </script>
 </body>
 </html>
